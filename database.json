@@ -12,53 +12,13 @@
   "donateOptions": [
     {
       "id": 1,
-      "title": "Vietcombank",
-      "type": "banking",
-      "info": "STK: 1234567890\nChủ tài khoản: NGUYEN VAN A\nNgân hàng: Vietcombank\nNội dung: Ung ho VieOS Tool",
-      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwMDc4NTIiLz4KPHRleHQgeD0iMTAwIiB5PSI5MCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+VklFVENPTUJBTks8L3RleHQ+CjxyZWN0IHg9IjQwIiB5PSIxMDAiIHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjUwIiB5PSIxMTAiIHdpZHRoPSIxMDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxIi8+CjxyZWN0IHg9IjYwIiB5PSIxMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+",
-      "active": true,
-      "currency": "VND",
-      "minAmount": 10000
-    },
-    {
-      "id": 2,
       "title": "MoMo",
       "type": "ewallet",
-      "info": "SĐT: 0123456789\nTên: NGUYEN VAN A\nMoMo eWallet\nNội dung: VieOS Tool Support",
-      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiNBRTJFNjgiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjI1IiBmaWxsPSIjRkZGRkZGIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iODgiIGZpbGw9IiNBRTJFNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiPk08L3RleHQ+Cjx0ZXh0IHg9IjEwMCIgeT0iMTMwIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIj5Nb01vPC90ZXh0Pgo8cmVjdCB4PSI0MCIgeT0iMTQwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4=",
+      "info": "Cảm ơn mọi người đã hỗ trợ",
+      "image": "./img/moc.png",
       "active": true,
       "currency": "VND",
-      "minAmount": 5000
-    },
-    {
-      "id": 3,
-      "title": "PayPal",
-      "type": "international",
-      "info": "PayPal: donate@jerryX0x.dev\nEmail: jerry.developer@gmail.com\nInternational donations welcome\nThank you for your support!",
-      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwMDcwQkEiLz4KPHRleHQgeD0iMTAwIiB5PSI4NSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCI+UGF5UGFsPC90ZXh0Pgo8dGV4dCB4PSIxMDAiIHk9IjExNSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIj5JbnRlcm5hdGlvbmFsPC90ZXh0Pgo8dGV4dCB4PSIxMDAiIHk9IjEzNSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIj5Eb25hdGlvbnM8L3RleHQ+CjxyZWN0IHg9IjUwIiB5PSIxNDUiIHdpZHRoPSIxMDAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvdmc+",
-      "active": true,
-      "currency": "USD",
-      "minAmount": 1
-    },
-    {
-      "id": 4,
-      "title": "Techcombank",
-      "type": "banking",
-      "info": "STK: 9876543210\nChủ tài khoản: NGUYEN VAN A\nNgân hàng: Techcombank\nNội dung: Support VieOS Development",
-      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiNGRjZBMDAiLz4KPHRleHQgeD0iMTAwIiB5PSI4NSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+VEVDSENPTUJBTES8L3RleHQ+CjxyZWN0IHg9IjQwIiB5PSIxMDAiIHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjUwIiB5PSIxMTAiIHdpZHRoPSIxMDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxIi8+CjxyZWN0IHg9IjYwIiB5PSIxMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+",
-      "active": true,
-      "currency": "VND",
-      "minAmount": 10000
-    },
-    {
-      "id": 5,
-      "title": "ZaloPay",
-      "type": "ewallet",
-      "info": "SĐT: 0123456789\nTên: NGUYEN VAN A\nZaloPay\nNội dung: VieOS Tool Donation",
-      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwMDY2RkYiLz4KPHRleHQgeD0iMTAwIiB5PSI4NSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCI+WmFsb1BheTwvdGV4dD4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTMwIiByPSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjMiLz4KPHRleHQgeD0iMTAwIiB5PSIxMzgiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiPlo8L3RleHQ+Cjwvc3ZnPg==",
-      "active": true,
-      "currency": "VND",
-      "minAmount": 5000
+      "minAmount": 0
     }
   ],
   "stats": {
