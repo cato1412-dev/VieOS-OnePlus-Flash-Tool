@@ -97,9 +97,11 @@
                 Công cụ flash Rom VieOS cho thiết bị OnePlus. Hỗ trợ đầy đủ các chế độ flash, recovery và bootloader.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button onclick="downloadTool()" class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg" data-version>
-                    📥 Tải xuống v1.1.0
-                </button>
+                <a href="">
+                    <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg" data-version>
+                        📥 Tải xuống v1.1.0
+                    </button>
+                </a>
                 <button onclick="showDonateModal()" class="glass-effect text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all">
                     ❤️ Ủng hộ tác giả
                 </button>
@@ -202,9 +204,11 @@
                 </div>
                 <h4 class="text-2xl font-semibold mb-4" data-version>VieOS Flash Tool v1.1.0</h4>
                 <p class="text-gray-400 mb-6">Phiên bản mới nhất với nhiều cải tiến và tính năng mới</p>
-                <button onclick="downloadTool()" class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg w-full mb-4">
-                    📥 Tải xuống (74.4 MB)
-                </button>
+                <a href="">
+                    <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg w-full mb-4">
+                        📥 Tải xuống (74.4 MB)
+                    </button>
+                </a>
                 <p class="text-sm text-gray-500">Hỗ trợ Windows 10/11 (64-bit)</p>
             </div>
         </div>
@@ -225,9 +229,11 @@
                     </div>
                     <h4 class="text-xl font-semibold mb-4">Telegram Group</h4>
                     <p class="text-gray-400 mb-6">Tham gia cộng đồng Telegram để được hỗ trợ nhanh chóng</p>
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all">
-                        <a href="https://t.me/VieOS_discussions">Tham gia Telegram</a>
-                    </button>
+                    <a href="https://t.me/VieOS_discussions">
+                        <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all">
+                            Tham gia Telegram
+                        </button>
+                    </a>
                 </div>
                 
                 <div class="card-hover glass-effect p-8 rounded-2xl text-center">
@@ -238,9 +244,11 @@
                     </div>
                     <h4 class="text-xl font-semibold mb-4">Facebook Group</h4>
                     <p class="text-gray-400 mb-6">Kết nối với cộng đồng người dùng OnePlus Việt Nam</p>
-                    <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
-                        <a href="https://www.facebook.com/groups/vieos.community">Tham gia Facebook</a>
-                    </button>
+                    <a href="https://www.facebook.com/groups/vieos.community">
+                        <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
+                            Tham gia Facebook
+                        </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -330,12 +338,6 @@
                 el.textContent = el.textContent.replace(/v[\d.]+/, `v${donateDatabase.version}`);
             });
 
-            // Update download button
-            const downloadBtn = document.querySelector('[onclick="downloadTool()"]');
-            if (downloadBtn && donateDatabase.stats) {
-                downloadBtn.innerHTML = `📥 Tải xuống v${donateDatabase.version}`;
-            }
-
             // Update stats if displayed
             if (donateDatabase.stats) {
                 console.log(`Stats: ${donateDatabase.stats.totalDownloads} downloads, ${donateDatabase.stats.supportedDevices} devices supported`);
@@ -414,27 +416,7 @@
         }
 
         // Download tool function
-        function downloadTool() {
-            // Simulate download
-            const button = event.target;
-            const originalText = button.textContent;
-            button.textContent = '⏳ Đang tải xuống...';
-            button.disabled = true;
-            
-            setTimeout(() => {
-                button.textContent = '✅ Tải xuống thành công!';
-                button.classList.add('bg-green-500');
-                
-                setTimeout(() => {
-                    button.textContent = originalText;
-                    button.disabled = false;
-                    button.classList.remove('bg-green-500');
-                }, 3000);
-                
-                // In real implementation, trigger actual download
-                console.log('Downloading VieOS Flash Tool v' + donateDatabase.version);
-            }, 2000);
-        }
+        
 
         // Cycle through donate options
         function cycleDonateOption() {
