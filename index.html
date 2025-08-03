@@ -229,7 +229,7 @@
                     </div>
                     <h4 class="text-xl font-semibold mb-4">Telegram Group</h4>
                     <p class="text-gray-400 mb-6">Tham gia cộng đồng Telegram để được hỗ trợ nhanh chóng</p>
-                    <a href="https://t.me/VieOS_discussions">
+                    <a target="_blank" href="https://t.me/VieOS_discussions">
                         <button class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all">
                             Tham gia Telegram
                         </button>
@@ -244,7 +244,7 @@
                     </div>
                     <h4 class="text-xl font-semibold mb-4">Facebook Group</h4>
                     <p class="text-gray-400 mb-6">Kết nối với cộng đồng người dùng OnePlus Việt Nam</p>
-                    <a href="https://www.facebook.com/groups/vieos.community">
+                    <a target="_blank" href="https://www.facebook.com/groups/vieos.community">
                         <button class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all">
                             Tham gia Facebook
                         </button>
@@ -336,6 +336,14 @@
             const versionElements = document.querySelectorAll('[data-version]');
             versionElements.forEach(el => {
                 el.textContent = el.textContent.replace(/v[\d.]+/, `v${donateDatabase.version}`);
+            });
+
+            const downloadButtons = document.querySelectorAll('a[href=""]');
+            downloadButtons.forEach(btn => {
+                const url = donateDatabase.appInfo?.downloadUrl || "#";
+                btn.href = url;
+                btn.target = "_blank";  // 👈 Mở tab mới
+                btn.rel = "noopener noreferrer"; // 👈 Bảo mật khi mở tab mới
             });
 
             // Update stats if displayed
