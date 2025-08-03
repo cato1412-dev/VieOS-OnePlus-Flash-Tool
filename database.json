@@ -1,0 +1,178 @@
+{
+  "version": "1.1.1",
+  "lastUpdated": "2025-08-03",
+  "appInfo": {
+    "name": "VieOS - OnePlus Flash Tool",
+    "developer": "JerryX0x",
+    "description": "Công cụ flash chuyên nghiệp cho thiết bị OnePlus",
+    "fileSize": "74.4 MB",
+    "requirements": "Windows 10/11 (64-bit)",
+    "downloadUrl": "https://github.com/jerryX0x/vieos-flash-tool/releases/latest"
+  },
+  "donateOptions": [
+    {
+      "id": 1,
+      "title": "Vietcombank",
+      "type": "banking",
+      "info": "STK: 1234567890\nChủ tài khoản: NGUYEN VAN A\nNgân hàng: Vietcombank\nNội dung: Ung ho VieOS Tool",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwMDc4NTIiLz4KPHRleHQgeD0iMTAwIiB5PSI5MCIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+VklFVENPTUJBTks8L3RleHQ+CjxyZWN0IHg9IjQwIiB5PSIxMDAiIHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjUwIiB5PSIxMTAiIHdpZHRoPSIxMDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxIi8+CjxyZWN0IHg9IjYwIiB5PSIxMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+",
+      "active": true,
+      "currency": "VND",
+      "minAmount": 10000
+    },
+    {
+      "id": 2,
+      "title": "MoMo",
+      "type": "ewallet",
+      "info": "SĐT: 0123456789\nTên: NGUYEN VAN A\nMoMo eWallet\nNội dung: VieOS Tool Support",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiNBRTJFNjgiLz4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iODAiIHI9IjI1IiBmaWxsPSIjRkZGRkZGIi8+Cjx0ZXh0IHg9IjEwMCIgeT0iODgiIGZpbGw9IiNBRTJFNjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiPk08L3RleHQ+Cjx0ZXh0IHg9IjEwMCIgeT0iMTMwIiBmaWxsPSIjRkZGRkZGIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTQiIGZvbnQtd2VpZ2h0PSJib2xkIj5Nb01vPC90ZXh0Pgo8cmVjdCB4PSI0MCIgeT0iMTQwIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjMwIiBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMiIvPgo8L3N2Zz4=",
+      "active": true,
+      "currency": "VND",
+      "minAmount": 5000
+    },
+    {
+      "id": 3,
+      "title": "PayPal",
+      "type": "international",
+      "info": "PayPal: donate@jerryX0x.dev\nEmail: jerry.developer@gmail.com\nInternational donations welcome\nThank you for your support!",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwMDcwQkEiLz4KPHRleHQgeD0iMTAwIiB5PSI4NSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCI+UGF5UGFsPC90ZXh0Pgo8dGV4dCB4PSIxMDAiIHk9IjExNSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIj5JbnRlcm5hdGlvbmFsPC90ZXh0Pgo8dGV4dCB4PSIxMDAiIHk9IjEzNSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIj5Eb25hdGlvbnM8L3RleHQ+CjxyZWN0IHg9IjUwIiB5PSIxNDUiIHdpZHRoPSIxMDAiIGhlaWdodD0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjwvdmc+",
+      "active": true,
+      "currency": "USD",
+      "minAmount": 1
+    },
+    {
+      "id": 4,
+      "title": "Techcombank",
+      "type": "banking",
+      "info": "STK: 9876543210\nChủ tài khoản: NGUYEN VAN A\nNgân hàng: Techcombank\nNội dung: Support VieOS Development",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiNGRjZBMDAiLz4KPHRleHQgeD0iMTAwIiB5PSI4NSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmb250LXdlaWdodD0iYm9sZCI+VEVDSENPTUJBTES8L3RleHQ+CjxyZWN0IHg9IjQwIiB5PSIxMDAiIHdpZHRoPSIxMjAiIGhlaWdodD0iNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxyZWN0IHg9IjUwIiB5PSIxMTAiIHdpZHRoPSIxMDAiIGhlaWdodD0iNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGRkZGRiIgc3Ryb2tlLXdpZHRoPSIxIi8+CjxyZWN0IHg9IjYwIiB5PSIxMjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjEiLz4KPC9zdmc+",
+      "active": true,
+      "currency": "VND",
+      "minAmount": 10000
+    },
+    {
+      "id": 5,
+      "title": "ZaloPay",
+      "type": "ewallet",
+      "info": "SĐT: 0123456789\nTên: NGUYEN VAN A\nZaloPay\nNội dung: VieOS Tool Donation",
+      "image": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRkZGRkZGIi8+CjxyZWN0IHg9IjIwIiB5PSIyMCIgd2lkdGg9IjE2MCIgaGVpZ2h0PSIxNjAiIGZpbGw9IiMwMDY2RkYiLz4KPHRleHQgeD0iMTAwIiB5PSI4NSIgZmlsbD0iI0ZGRkZGRiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE4IiBmb250LXdlaWdodD0iYm9sZCI+WmFsb1BheTwvdGV4dD4KPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTMwIiByPSIyMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjMiLz4KPHRleHQgeD0iMTAwIiB5PSIxMzgiIGZpbGw9IiNGRkZGRkYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNiIgZm9udC13ZWlnaHQ9ImJvbGQiPlo8L3RleHQ+Cjwvc3ZnPg==",
+      "active": true,
+      "currency": "VND",
+      "minAmount": 5000
+    }
+  ],
+  "stats": {
+    "totalDownloads": 12485,
+    "currentVersion": "1.1.0",
+    "supportedDevices": 15,
+    "lastUpdate": "2025-08-03",
+    "monthlyDownloads": 2847,
+    "userRating": 4.8,
+    "totalUsers": 8965
+  },
+  "features": [
+    {
+      "id": "flash_rom",
+      "name": "Flash ROM",
+      "description": "Hỗ trợ flash ROM từ folder hoặc file ZIP với giao diện thân thiện",
+      "icon": "🔧",
+      "enabled": true
+    },
+    {
+      "id": "bootloader",
+      "name": "Bootloader & Fastboot",
+      "description": "Kiểm tra và chuyển đổi giữa các chế độ bootloader, fastboot một cách an toàn",
+      "icon": "⚡",
+      "enabled": true
+    },
+    {
+      "id": "recovery",
+      "name": "Recovery Mode",
+      "description": "Truy cập và quản lý chế độ recovery với các tùy chọn nâng cao",
+      "icon": "🔄",
+      "enabled": true
+    },
+    {
+      "id": "adb_sideload",
+      "name": "ADB Sideload",
+      "description": "Hỗ trợ ADB sideload để cài đặt các gói cập nhật và ROM",
+      "icon": "💾",
+      "enabled": true
+    },
+    {
+      "id": "format_data",
+      "name": "Format Data",
+      "description": "Tùy chọn format data (factory reset) an toàn và hiệu quả",
+      "icon": "🛡️",
+      "enabled": true
+    },
+    {
+      "id": "auto_detect",
+      "name": "Tự động phát hiện",
+      "description": "Tự động phát hiện thiết bị OnePlus và trạng thái kết nối",
+      "icon": "📱",
+      "enabled": true
+    }
+  ],
+  "supportedDevices": [
+    "OnePlus 12",
+    "OnePlus 11",
+    "OnePlus 10 Pro",
+    "OnePlus 10T",
+    "OnePlus 9 Pro",
+    "OnePlus 9",
+    "OnePlus 8T",
+    "OnePlus 8 Pro",
+    "OnePlus 8",
+    "OnePlus 7T Pro",
+    "OnePlus 7T",
+    "OnePlus 7 Pro",
+    "OnePlus 7",
+    "OnePlus 6T",
+    "OnePlus 6"
+  ],
+  "changelog": [
+    {
+      "version": "1.1.0",
+      "date": "2025-08-03",
+      "changes": [
+        "Thêm hỗ trợ OnePlus 12",
+        "Cải thiện tốc độ flash ROM",
+        "Sửa lỗi kết nối ADB",
+        "Cập nhật giao diện người dùng",
+        "Thêm tính năng auto-detect thiết bị"
+      ]
+    },
+    {
+      "version": "1.0.5",
+      "date": "2025-07-15",
+      "changes": [
+        "Sửa lỗi flash boot image",
+        "Cải thiện độ ổn định",
+        "Thêm hỗ trợ OnePlus 11"
+      ]
+    },
+    {
+      "version": "1.0.0",
+      "date": "2025-06-01",
+      "changes": [
+        "Phiên bản đầu tiên",
+        "Hỗ trợ flash ROM cơ bản",
+        "Chế độ bootloader và fastboot"
+      ]
+    }
+  ],
+  "social": {
+    "telegram": "https://t.me/vieos_support",
+    "facebook": "https://facebook.com/groups/oneplus.vietnam",
+    "github": "https://github.com/jerryX0x/vieos-flash-tool",
+    "website": "https://vieos.jerryX0x.dev"
+  },
+  "metadata": {
+    "databaseVersion": "2.1",
+    "created": "2025-08-03",
+    "lastModified": "2025-08-03T10:30:00Z",
+    "author": "JerryX0x",
+    "license": "MIT"
+  }
+}
