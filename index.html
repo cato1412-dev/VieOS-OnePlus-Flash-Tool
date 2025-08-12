@@ -40,12 +40,12 @@
                 </h1>
             </div>
             <nav class="hidden md:flex space-x-6">
-                <a href="/features" class="hover:text-primary transition-colors">Tính năng</a>
-                <a href="/tutorial" class="hover:text-primary transition-colors">Hướng dẫn</a>
-                <a href="/download" class="hover:text-primary transition-colors">Tải xuống</a>
-                <a href="/support" class="hover:text-primary transition-colors">Hỗ trợ</a>
-                <a href="/roms" class="hover:text-primary transition-colors">ROM</a>
-                <a href="/tools" class="hover:text-primary transition-colors">Tools</a>
+                <a href="#features" class="hover:text-primary transition-colors">Tính năng</a>
+                <a href="#tutorial" class="hover:text-primary transition-colors">Hướng dẫn</a>
+                <a href="#download" class="hover:text-primary transition-colors">Tải xuống</a>
+                <a href="#support" class="hover:text-primary transition-colors">Hỗ trợ</a>
+                <a href="#roms" class="hover:text-primary transition-colors">ROM</a>
+                <a href="#tools" class="hover:text-primary transition-colors">Tools</a>
             </nav>
         </div>
     </header>
@@ -61,7 +61,7 @@
                 Công cụ flash Rom VieOS cho thiết bị OnePlus. Hỗ trợ đầy đủ các chế độ flash, recovery và bootloader.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw">
+                <a target="_blank" rel="noopener noreferrer">
                     <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg" data-version>
                         📥 Tải xuống v1.1.0
                     </button>
@@ -149,7 +149,8 @@
                                 src="https://drive.google.com/file/d/1LMHmOuJ9DLPDxP7xVTvryy3UBIHHVMTz/preview"
                                 frameborder="0"
                                 allowfullscreen
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                                sandbox="allow-same-origin allow-scripts allow-presentation allow-top-navigation"
                             ></iframe>
                         </div>
                         
@@ -247,37 +248,35 @@
                 ROM VieOS
             </h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <a href="/roms/oneplus-8" class="card-hover glass-effect p-8 rounded-2xl block">
+                <div class="card-hover glass-effect p-8 rounded-2xl cursor-pointer" onclick="navigateToSection('oneplus-8')">
                     <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6 floating">
                         <span class="text-2xl">📱</span>
                     </div>
                     <h4 class="text-xl font-semibold mb-4 text-center">OnePlus Ace 3v</h4>
                     <p class="text-gray-400 text-center">ROM VieOS cho OnePlus Ace 3v</p>
-                </a>
+                </div>
                 
-                <a href="/roms/oneplus-8-pro" class="card-hover glass-effect p-8 rounded-2xl block">
+                <div class="card-hover glass-effect p-8 rounded-2xl cursor-pointer" onclick="navigateToSection('oneplus-8-pro')">
                     <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6 floating">
                         <span class="text-2xl">📱</span>
                     </div>
                     <h4 class="text-xl font-semibold mb-4 text-center">OnePlus Ace 5</h4>
                     <p class="text-gray-400 text-center">ROM VieOS cho OnePlus Ace 5</p>
-                </a>
+                </div>
                 
-                <a href="/roms/oneplus-9" class="card-hover glass-effect p-8 rounded-2xl block">
+                <div class="card-hover glass-effect p-8 rounded-2xl cursor-pointer" onclick="navigateToSection('oneplus-9')">
                     <div class="w-16 h-16 bg-primary/20 rounded-xl flex items-center justify-center mx-auto mb-6 floating">
                         <span class="text-2xl">📱</span>
                     </div>
                     <h4 class="text-xl font-semibold mb-4 text-center">OnePlus 13</h4>
                     <p class="text-gray-400 text-center">ROM VieOS cho OnePlus 13</p>
-                </a>
+                </div>
             </div>
             
             <div class="text-center mt-12">
-                <a href="/roms">
-                    <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg">
-                        📂 Xem tất cả ROM
-                    </button>
-                </a>
+                <button onclick="navigateToSection('all-roms')" class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg">
+                    📂 Xem tất cả ROM
+                </button>
             </div>
         </div>
     </section>
@@ -294,7 +293,7 @@
                 </div>
                 <h4 class="text-2xl font-semibold mb-4" data-version>VieOS Flash Tool v1.1.0</h4>
                 <p class="text-gray-400 mb-6">Phiên bản mới nhất với nhiều cải tiến và tính năng mới</p>
-                <a href="/download/latest">
+                <a href="#" target="_blank" rel="noopener noreferrer">
                     <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg w-full mb-4">
                         📥 Tải xuống (180 MB)
                     </button>
@@ -311,7 +310,7 @@
                 Hỗ trợ & Cộng đồng
             </h3>
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <a href="/support/telegram" class="card-hover glass-effect p-8 rounded-2xl text-center block">
+                <div class="card-hover glass-effect p-8 rounded-2xl text-center cursor-pointer" onclick="window.open('https://t.me/VieOS_discussions', '_blank')">
                     <div class="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-6">
                         <span class="text-3xl">
                             <img src="https://img.icons8.com/?size=100&id=63306&format=png&color=000000" alt="" srcset="">
@@ -322,9 +321,9 @@
                     <span class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold transition-all inline-block">
                         Tham gia Telegram
                     </span>
-                </a>
+                </div>
                 
-                <a href="/support/facebook" class="card-hover glass-effect p-8 rounded-2xl text-center block">
+                <div class="card-hover glass-effect p-8 rounded-2xl text-center cursor-pointer" onclick="window.open('https://www.facebook.com/groups/vieos.community', '_blank')">
                     <div class="w-16 h-16 bg-blue-600/20 rounded-xl flex items-center justify-center mx-auto mb-6">
                         <span class="text-3xl">
                             <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="" srcset="">
@@ -335,7 +334,7 @@
                     <span class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-all inline-block">
                         Tham gia Facebook
                     </span>
-                </a>
+                </div>
             </div>
         </div>
     </section>
@@ -367,10 +366,10 @@
                 <div>
                     <h5 class="font-semibold mb-4">Liên kết nhanh</h5>
                     <ul class="space-y-2">
-                        <li><a href="/download" class="text-gray-400 hover:text-white transition-colors">Tải xuống</a></li>
-                        <li><a href="/tutorial" class="text-gray-400 hover:text-white transition-colors">Hướng dẫn</a></li>
-                        <li><a href="/roms" class="text-gray-400 hover:text-white transition-colors">ROM VieOS</a></li>
-                        <li><a href="/tools" class="text-gray-400 hover:text-white transition-colors">Công cụ</a></li>
+                        <li><a href="#download" class="text-gray-400 hover:text-white transition-colors">Tải xuống</a></li>
+                        <li><a href="#tutorial" class="text-gray-400 hover:text-white transition-colors">Hướng dẫn</a></li>
+                        <li><a href="#roms" class="text-gray-400 hover:text-white transition-colors">ROM VieOS</a></li>
+                        <li><a href="#tools" class="text-gray-400 hover:text-white transition-colors">Công cụ</a></li>
                     </ul>
                 </div>
                 
@@ -378,10 +377,10 @@
                 <div>
                     <h5 class="font-semibold mb-4">Thông tin</h5>
                     <ul class="space-y-2">
-                        <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">Giới thiệu</a></li>
-                        <li><a href="/privacy" class="text-gray-400 hover:text-white transition-colors">Chính sách bảo mật</a></li>
-                        <li><a href="/terms" class="text-gray-400 hover:text-white transition-colors">Điều khoản sử dụng</a></li>
-                        <li><a href="/changelog" class="text-gray-400 hover:text-white transition-colors">Lịch sử cập nhật</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Giới thiệu</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-white transition-colors">Chính sách bảo mật</a></li>
+                        <li><a href="#terms" class="text-gray-400 hover:text-white transition-colors">Điều khoản sử dụng</a></li>
+                        <li><a href="#changelog" class="text-gray-400 hover:text-white transition-colors">Lịch sử cập nhật</a></li>
                     </ul>
                 </div>
             </div>
@@ -422,7 +421,7 @@
         </div>
     </div>
 
-    <!-- Load external scripts -->
+    <!-- JavaScript -->
     <script src="./js/main.js"></script>
 
     <!-- Google Tag Manager (noscript) -->
