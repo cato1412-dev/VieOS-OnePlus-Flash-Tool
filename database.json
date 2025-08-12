@@ -1,11 +1,19 @@
 {
   "version": "3.0.2",
   "lastUpdated": "2025-08-03",
+  "videoConfig": {
+    "googleDriveId": "1LMHmOuJ9DLPDxP7xVTvryy3UBIHHVMTz",
+    "title": "Hướng dẫn cài đặt ROM VieOS",
+    "duration": "5:30",
+    "quality": "1080p",
+    "fallbackUrl": "./video/video.mp4",
+    "posterImage": "./img/video-poster.png"
+  },  
   "appInfo": {
     "name": "VieOS - OnePlus Flash Tool",
     "developer": "JerryX0x",
     "description": "Công cụ flash chuyên nghiệp cho thiết bị OnePlus",
-    "fileSize": "74.4 MB",
+    "fileSize": "180 MB",
     "requirements": "Windows 10/11 (64-bit)",
     "downloadUrl": "https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw"
   },
@@ -29,110 +37,5 @@
     "monthlyDownloads": 2847,
     "userRating": 4.8,
     "totalUsers": 8965
-  },
-  "features": [
-    {
-      "id": "flash_rom",
-      "name": "Flash ROM",
-      "description": "Hỗ trợ flash ROM từ folder hoặc file ZIP với giao diện thân thiện",
-      "icon": "🔧",
-      "enabled": true
-    },
-    {
-      "id": "bootloader",
-      "name": "Bootloader & Fastboot",
-      "description": "Kiểm tra và chuyển đổi giữa các chế độ bootloader, fastboot một cách an toàn",
-      "icon": "⚡",
-      "enabled": true
-    },
-    {
-      "id": "recovery",
-      "name": "Recovery Mode",
-      "description": "Truy cập và quản lý chế độ recovery với các tùy chọn nâng cao",
-      "icon": "🔄",
-      "enabled": true
-    },
-    {
-      "id": "adb_sideload",
-      "name": "ADB Sideload",
-      "description": "Hỗ trợ ADB sideload để cài đặt các gói cập nhật và ROM",
-      "icon": "💾",
-      "enabled": true
-    },
-    {
-      "id": "format_data",
-      "name": "Format Data",
-      "description": "Tùy chọn format data (factory reset) an toàn và hiệu quả",
-      "icon": "🛡️",
-      "enabled": true
-    },
-    {
-      "id": "auto_detect",
-      "name": "Tự động phát hiện",
-      "description": "Tự động phát hiện thiết bị OnePlus và trạng thái kết nối",
-      "icon": "📱",
-      "enabled": true
-    }
-  ],
-  "supportedDevices": [
-    "OnePlus 12",
-    "OnePlus 11",
-    "OnePlus 10 Pro",
-    "OnePlus 10T",
-    "OnePlus 9 Pro",
-    "OnePlus 9",
-    "OnePlus 8T",
-    "OnePlus 8 Pro",
-    "OnePlus 8",
-    "OnePlus 7T Pro",
-    "OnePlus 7T",
-    "OnePlus 7 Pro",
-    "OnePlus 7",
-    "OnePlus 6T",
-    "OnePlus 6"
-  ],
-  "changelog": [
-    {
-      "version": "1.1.0",
-      "date": "2025-08-03",
-      "changes": [
-        "Thêm hỗ trợ OnePlus 12",
-        "Cải thiện tốc độ flash ROM",
-        "Sửa lỗi kết nối ADB",
-        "Cập nhật giao diện người dùng",
-        "Thêm tính năng auto-detect thiết bị"
-      ]
-    },
-    {
-      "version": "1.0.5",
-      "date": "2025-07-15",
-      "changes": [
-        "Sửa lỗi flash boot image",
-        "Cải thiện độ ổn định",
-        "Thêm hỗ trợ OnePlus 11"
-      ]
-    },
-    {
-      "version": "1.0.0",
-      "date": "2025-06-01",
-      "changes": [
-        "Phiên bản đầu tiên",
-        "Hỗ trợ flash ROM cơ bản",
-        "Chế độ bootloader và fastboot"
-      ]
-    }
-  ],
-  "social": {
-    "telegram": "https://t.me/vieos_support",
-    "facebook": "https://facebook.com/groups/oneplus.vietnam",
-    "github": "https://github.com/jerryX0x/vieos-flash-tool",
-    "website": "https://vieos.jerryX0x.dev"
-  },
-  "metadata": {
-    "databaseVersion": "2.1",
-    "created": "2025-08-03",
-    "lastModified": "2025-08-03T10:30:00Z",
-    "author": "JerryX0x",
-    "license": "MIT"
   }
 }
