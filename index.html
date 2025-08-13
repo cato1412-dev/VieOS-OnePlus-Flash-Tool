@@ -136,11 +136,7 @@
                 Công cụ flash Rom VieOS cho thiết bị OnePlus. Hỗ trợ đầy đủ các chế độ flash, recovery và bootloader.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-<<<<<<< HEAD
                 <a href="#" target="_blank" rel="noopener noreferrer" id="heroDownloadBtn">
-=======
-                <a href="https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw" target="_blank" rel="noopener noreferrer">
->>>>>>> a5eb0bf43a43713dc39edd38af57e5170882742a
                     <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg" data-version>
                         🔥 Tải xuống v3.0.2
                     </button>
@@ -220,27 +216,48 @@
                 <!-- Video Player -->
                 <div class="card-hover">
                     <div class="relative rounded-2xl overflow-hidden bg-gray-900 aspect-video">
-                        <!-- Google Drive Video Embed -->
+                        <!-- Local Video Player -->
                         <div id="videoContainer" class="w-full h-full">
-                            <iframe 
+                            <video 
                                 id="tutorialVideo"
-                                class="w-full h-full"
-                                src="https://drive.google.com/file/d/1LMHmOuJ9DLPDxP7xVTvryy3UBIHHVMTz/preview"
-                                frameborder="0"
-                                allowfullscreen
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-                                sandbox="allow-same-origin allow-scripts allow-presentation allow-top-navigation"
-                            ></iframe>
+                                class="w-full h-full object-cover"
+                                controls
+                                preload="metadata"
+                                poster="./img/video-poster.png"
+                            >
+                                <source src="./video/tutorial.mkv" type="video/x-matroska">
+                                <source src="./video/tutorial.mp4" type="video/mp4">
+                                <source src="./video/tutorial.webm" type="video/webm">
+                                <p class="text-white p-4 flex items-center justify-center h-full">
+                                    <span class="text-center">
+                                        <span class="text-2xl block mb-2">📹</span>
+                                        Trình duyệt của bạn không hỗ trợ video HTML5.<br>
+                                        <a href="./video/tutorial.mkv" class="text-primary underline" download>Tải xuống video</a>
+                                    </span>
+                                </p>
+                            </video>
                         </div>
                         
-                        <!-- Fallback for when video is not available -->
-                        <div id="videoFallback" class="absolute inset-0 flex items-center justify-center bg-black/80 hidden">
+                        <!-- Loading overlay -->
+                        <div id="videoLoading" class="absolute inset-0 flex items-center justify-center bg-black/80 hidden">
                             <div class="text-center">
-                                <div class="w-16 h-16 bg-primary/80 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span class="text-2xl">▶️</span>
-                                </div>
-                                <p class="text-white font-semibold mb-2">Video đang được tải...</p>
+                                <div class="loading-spinner mx-auto mb-4"></div>
+                                <p class="text-white font-semibold mb-2">Đang tải video...</p>
                                 <p class="text-gray-300 text-sm">Vui lòng đợi trong giây lát</p>
+                            </div>
+                        </div>
+
+                        <!-- Error overlay -->
+                        <div id="videoError" class="absolute inset-0 flex items-center justify-center bg-black/80 hidden">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span class="text-2xl">⚠️</span>
+                                </div>
+                                <p class="text-white font-semibold mb-2">Không thể tải video</p>
+                                <p class="text-gray-300 text-sm mb-4">Vui lòng thử lại sau</p>
+                                <a href="./video/video.mkv" class="bg-primary hover:bg-accent text-white px-4 py-2 rounded-lg font-semibold transition-all inline-block" download>
+                                    📥 Tải xuống video
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -371,7 +388,6 @@
                 </div>
                 <h4 class="text-2xl font-semibold mb-4" data-version>VieOS Flash Tool v3.0.2</h4>
                 <p class="text-gray-400 mb-6">Phiên bản mới nhất với nhiều cải tiến và tính năng mới</p>
-<<<<<<< HEAD
                 <div id="mainDownloadBtn">
                     <a href="#" target="_blank" rel="noopener noreferrer">
                         <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg w-full mb-4">
@@ -379,13 +395,6 @@
                         </button>
                     </a>
                 </div>
-=======
-                <a href="https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw" target="_blank" rel="noopener noreferrer">
-                    <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg w-full mb-4">
-                        📥 Tải xuống (180 MB)
-                    </button>
-                </a>
->>>>>>> a5eb0bf43a43713dc39edd38af57e5170882742a
                 <p class="text-sm text-gray-500">Hỗ trợ Windows 10/11 (64-bit)</p>
             </div>
         </div>
@@ -513,11 +522,12 @@
         let donateDatabase = {};
         let currentDonateIndex = 0;
         
-        // Configuration for Google Drive Video
+        // Configuration for local video
         const VIDEO_CONFIG = {
-            driveFileId: '1LMHmOuJ9DLPDxP7xVTvryy3UBIHHVMTz',
-            fallbackVideoUrl: './video/video.mp4',
-            posterImage: './img/video-poster.png'
+            localVideoUrl: './video/tutorial.mkv', // MKV video file
+            fallbackVideoUrl: './video/tutorial.mp4', // MP4 fallback
+            posterImage: './img/video-poster.png',
+            title: 'Hướng dẫn cài đặt ROM VieOS'
         };
         
         // Database Management
@@ -528,11 +538,11 @@
                     "version": "3.0.2",
                     "lastUpdated": "2025-08-03",
                     "videoConfig": {
-                        "googleDriveId": "1LMHmOuJ9DLPDxP7xVTvryy3UBIHHVMTz",
+                        "localVideoUrl": "./video/tutorial.mkv",
                         "title": "Hướng dẫn cài đặt ROM VieOS",
                         "duration": "5:30",
                         "quality": "1080p",
-                        "fallbackUrl": "./video/video.mp4",
+                        "fallbackUrl": "./video/tutorial.mp4",
                         "posterImage": "./img/video-poster.png"
                     },  
                     "appInfo": {
@@ -670,65 +680,96 @@
         
         // Video Management Functions
         function initializeVideoPlayer() {
-            const videoContainer = document.getElementById('videoContainer');
-            const videoFallback = document.getElementById('videoFallback');
-            const iframe = document.getElementById('tutorialVideo');
+            const video = document.getElementById('tutorialVideo');
+            const videoLoading = document.getElementById('videoLoading');
+            const videoError = document.getElementById('videoError');
             
-            if (!iframe) return;
+            if (!video) return;
             
-            // Show loading state
-            if (videoFallback) {
-                videoFallback.classList.remove('hidden');
+            // Set video source from database or config
+            const videoUrl = donateDatabase.videoConfig?.localVideoUrl || VIDEO_CONFIG.localVideoUrl;
+            const fallbackUrl = donateDatabase.videoConfig?.fallbackUrl || VIDEO_CONFIG.fallbackVideoUrl;
+            const posterUrl = donateDatabase.videoConfig?.posterImage || VIDEO_CONFIG.posterImage;
+            
+            // Update video sources
+            const sources = video.querySelectorAll('source');
+            if (sources.length > 0) {
+                sources[0].src = videoUrl; // MKV source
+                if (sources[1]) sources[1].src = fallbackUrl; // MP4 fallback
             }
             
-            // Get video ID from database if available
-            const videoId = donateDatabase.videoConfig?.googleDriveId || VIDEO_CONFIG.driveFileId;
-            const driveUrl = `https://drive.google.com/file/d/${videoId}/preview`;
-            
-            // Only update the source if it's different
-            if (iframe.src !== driveUrl) {
-                iframe.src = driveUrl;
-                
-                // Hide loading after a delay
-                setTimeout(() => {
-                    if (videoFallback) {
-                        videoFallback.classList.add('hidden');
-                    }
-                }, 2000);
-                
-                iframe.addEventListener('load', () => {
-                    if (videoFallback) {
-                        videoFallback.classList.add('hidden');
-                    }
-                });
-                
-                iframe.addEventListener('error', () => {
-                    handleVideoError();
-                });
+            // Update poster
+            if (posterUrl) {
+                video.poster = posterUrl;
             }
+            
+            // Video event listeners
+            video.addEventListener('loadstart', function() {
+                console.log('Video loading started');
+                if (videoLoading) videoLoading.classList.remove('hidden');
+                if (videoError) videoError.classList.add('hidden');
+            });
+            
+            video.addEventListener('loadedmetadata', function() {
+                console.log('Video metadata loaded');
+                if (videoLoading) videoLoading.classList.add('hidden');
+            });
+            
+            video.addEventListener('canplay', function() {
+                console.log('Video can start playing');
+                if (videoLoading) videoLoading.classList.add('hidden');
+            });
+            
+            video.addEventListener('error', function(e) {
+                console.error('Video error:', e);
+                handleVideoError();
+            });
+            
+            video.addEventListener('stalled', function() {
+                console.warn('Video stalled');
+                if (videoLoading) videoLoading.classList.remove('hidden');
+            });
+            
+            video.addEventListener('waiting', function() {
+                console.log('Video waiting for data');
+                if (videoLoading) videoLoading.classList.remove('hidden');
+            });
+            
+            video.addEventListener('playing', function() {
+                console.log('Video started playing');
+                if (videoLoading) videoLoading.classList.add('hidden');
+            });
+            
+            // Try to preload video
+            video.load();
         }
         
         function handleVideoError() {
-            const videoContainer = document.getElementById('videoContainer');
-            const videoFallback = document.getElementById('videoFallback');
+            const videoLoading = document.getElementById('videoLoading');
+            const videoError = document.getElementById('videoError');
             
-            // Create fallback video element
-            if (videoContainer) {
-                videoContainer.innerHTML = `
-                    <video 
-                        class="w-full h-full object-cover" 
-                        controls 
-                        poster="${VIDEO_CONFIG.posterImage}"
-                    >
-                        <source src="${VIDEO_CONFIG.fallbackVideoUrl}" type="video/mp4">
-                        <p class="text-white p-4">Trình duyệt của bạn không hỗ trợ video HTML5.</p>
-                    </video>
-                `;
+            console.error('Video failed to load, showing error state');
+            
+            if (videoLoading) videoLoading.classList.add('hidden');
+            if (videoError) videoError.classList.remove('hidden');
+        }
+        
+        // Update video source programmatically
+        function updateVideoSource(videoUrl, fallbackUrl) {
+            const video = document.getElementById('tutorialVideo');
+            if (!video) return;
+            
+            const sources = video.querySelectorAll('source');
+            if (sources.length > 0) {
+                sources[0].src = videoUrl || VIDEO_CONFIG.localVideoUrl;
+                if (sources[1] && fallbackUrl) {
+                    sources[1].src = fallbackUrl;
+                }
             }
             
-            if (videoFallback) {
-                videoFallback.classList.add('hidden');
-            }
+            // Reload video with new sources
+            video.load();
+            console.log('Video source updated:', videoUrl);
         }
         
         // Donate Modal Functions
@@ -961,10 +1002,7 @@
             showDonateModal,
             closeDonateModal,
             copyDonateInfo,
-            updateVideoSource: function(driveFileId) {
-                VIDEO_CONFIG.driveFileId = driveFileId;
-                initializeVideoPlayer();
-            },
+            updateVideoSource,
             loadDatabase,
             toggleMobileMenu,
             navigateToSection
