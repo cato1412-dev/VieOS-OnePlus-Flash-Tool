@@ -154,7 +154,7 @@
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a href="#" target="_blank" rel="noopener noreferrer" id="heroDownloadBtn">
                     <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg" data-version>
-                        🔥 Tải xuống v3.0.2
+                        🔥 Tải xuống v3.0.3
                     </button>
                 </a>
                 <button onclick="showDonateModal()" class="glass-effect text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all">
@@ -409,7 +409,7 @@
                 <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6 floating">
                     <span class="text-2xl">🔥</span>
                 </div>
-                <h4 class="text-2xl font-semibold mb-4" data-version>VieOS Flash Tool v3.0.2</h4>
+                <h4 class="text-2xl font-semibold mb-4" data-version>VieOS Flash Tool v3.0.3</h4>
                 <p class="text-gray-400 mb-6">Phiên bản mới nhất với nhiều cải tiến và tính năng mới</p>
                 <div id="mainDownloadBtn">
                     <a href="#" target="_blank" rel="noopener noreferrer">
@@ -591,7 +591,7 @@
                     ],
                     "stats": {
                         "totalDownloads": 12485,
-                        "currentVersion": "3.0.2",
+                        "currentVersion": "3.0.3",
                         "supportedDevices": 15,
                         "lastUpdate": "2025-08-03",
                         "monthlyDownloads": 2847,
@@ -615,7 +615,7 @@
         // Default database as fallback
         function getDefaultDatabase() {
             return {
-                version: "3.0.2",
+                version: "3.0.3",
                 lastUpdated: "2025-08-03",
                 youtubeConfig: {
                     videoId: "dQw4w9WgXcQ",
@@ -637,7 +637,7 @@
                 ],
                 stats: {
                     totalDownloads: 12485,
-                    currentVersion: "3.0.2",
+                    currentVersion: "3.0.3",
                     supportedDevices: 15,
                     lastUpdate: "2025-08-03"
                 }
@@ -649,7 +649,7 @@
             // Update version numbers throughout the page
             const versionElements = document.querySelectorAll('[data-version]');
             versionElements.forEach(el => {
-                const currentVersion = donateDatabase.stats?.currentVersion || donateDatabase.version || "3.0.2";
+                const currentVersion = donateDatabase.stats?.currentVersion || donateDatabase.version || "3.0.3";
                 console.log('Updating version to:', currentVersion);
                 el.textContent = el.textContent.replace(/v[\d.]+/, `v${currentVersion}`);
             });
