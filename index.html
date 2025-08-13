@@ -88,6 +88,22 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* YouTube iframe responsive */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -213,51 +229,42 @@
                 Hướng dẫn cài đặt ROM
             </h3>
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <!-- Video Player -->
+                <!-- YouTube Video Player -->
                 <div class="card-hover">
                     <div class="relative rounded-2xl overflow-hidden bg-gray-900 aspect-video">
-                        <!-- Local Video Player -->
-                        <div id="videoContainer" class="w-full h-full">
-                            <video 
-                                id="tutorialVideo"
-                                class="w-full h-full object-cover"
-                                controls
-                                preload="metadata"
-                                poster="./img/video-poster.png"
-                            >
-                                <source src="./video/tutorial.mkv" type="video/x-matroska">
-                                <source src="./video/tutorial.mp4" type="video/mp4">
-                                <source src="./video/tutorial.webm" type="video/webm">
-                                <p class="text-white p-4 flex items-center justify-center h-full">
-                                    <span class="text-center">
-                                        <span class="text-2xl block mb-2">📹</span>
-                                        Trình duyệt của bạn không hỗ trợ video HTML5.<br>
-                                        <a href="./video/tutorial.mkv" class="text-primary underline" download>Tải xuống video</a>
-                                    </span>
-                                </p>
-                            </video>
+                        <!-- YouTube Embed Container -->
+                        <div id="youtubeContainer" class="video-container">
+                            <iframe 
+                                id="youtubePlayer"
+                                src="https://www.youtube.com/embed/-xYg32_Pa1c?enablejsapi=1&rel=0&modestbranding=1&showinfo=0"
+                                title="Hướng dẫn cài đặt ROM VieOS"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                                loading="lazy"
+                            ></iframe>
                         </div>
                         
-                        <!-- Loading overlay -->
+                        <!-- Loading overlay for YouTube -->
                         <div id="videoLoading" class="absolute inset-0 flex items-center justify-center bg-black/80 hidden">
                             <div class="text-center">
                                 <div class="loading-spinner mx-auto mb-4"></div>
-                                <p class="text-white font-semibold mb-2">Đang tải video...</p>
+                                <p class="text-white font-semibold mb-2">Đang tải video YouTube...</p>
                                 <p class="text-gray-300 text-sm">Vui lòng đợi trong giây lát</p>
                             </div>
                         </div>
 
-                        <!-- Error overlay -->
+                        <!-- Fallback message -->
                         <div id="videoError" class="absolute inset-0 flex items-center justify-center bg-black/80 hidden">
                             <div class="text-center">
                                 <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <span class="text-2xl">⚠️</span>
+                                    <span class="text-2xl">📺</span>
                                 </div>
-                                <p class="text-white font-semibold mb-2">Không thể tải video</p>
-                                <p class="text-gray-300 text-sm mb-4">Vui lòng thử lại sau</p>
-                                <a href="./video/video.mkv" class="bg-primary hover:bg-accent text-white px-4 py-2 rounded-lg font-semibold transition-all inline-block" download>
-                                    📥 Tải xuống video
-                                </a>
+                                <p class="text-white font-semibold mb-2">Không thể tải video YouTube</p>
+                                <p class="text-gray-300 text-sm mb-4">Vui lòng kiểm tra kết nối internet</p>
+                                <button onclick="retryVideo()" class="bg-primary hover:bg-accent text-white px-4 py-2 rounded-lg font-semibold transition-all">
+                                    🔄 Thử lại
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -266,7 +273,7 @@
                 <!-- Tutorial Info -->
                 <div class="space-y-8">
                     <div class="glass-effect p-6 rounded-2xl">
-                        <h4 class="text-2xl font-bold mb-4 text-primary">🎹 Video hướng dẫn</h4>
+                        <h4 class="text-2xl font-bold mb-4 text-primary">🎥 Video hướng dẫn</h4>
                         <p class="text-gray-300 mb-6">
                             Xem video hướng dẫn từng bước để cài đặt ROM VieOS trên thiết bị OnePlus của bạn một cách an toàn và hiệu quả bằng VieOS Flash Tool.
                         </p>
@@ -298,15 +305,31 @@
                         </div>
                     </div>
                     
-                    <div class="grid grid-cols-2 gap-4">
+                    <div class="grid grid-cols-3 gap-4">
                         <div class="glass-effect p-4 rounded-xl text-center">
-                            <div class="text-2xl font-bold text-primary">5 phút</div>
+                            <div class="text-2xl font-bold text-primary" id="videoDuration">5 phút</div>
                             <div class="text-sm text-gray-400">Thời lượng</div>
                         </div>
                         <div class="glass-effect p-4 rounded-xl text-center">
                             <div class="text-2xl font-bold text-primary">1080p</div>
                             <div class="text-sm text-gray-400">Chất lượng</div>
                         </div>
+                        <div class="glass-effect p-4 rounded-xl text-center">
+                            <div class="text-2xl font-bold text-primary" id="videoViews">▶️</div>
+                            <div class="text-sm text-gray-400">YouTube</div>
+                        </div>
+                    </div>
+
+                    <!-- Video Controls -->
+                    <div class="flex gap-4">
+                        <button onclick="openYouTubeFullscreen()" class="btn-glow bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2">
+                            <span>📺</span>
+                            <span>Xem trên YouTube</span>
+                        </button>
+                        <button onclick="shareVideo()" class="glass-effect hover:bg-white/20 text-white px-6 py-3 rounded-lg font-semibold flex items-center space-x-2 transition-all">
+                            <span>🔗</span>
+                            <span>Chia sẻ</span>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -516,18 +539,19 @@
 
     <!-- Integrated JavaScript -->
     <script>
-        // VieOS Flash Tool - Main JavaScript
+        // VieOS Flash Tool - Main JavaScript with YouTube Integration
         
         // Global Variables
         let donateDatabase = {};
         let currentDonateIndex = 0;
+        let youtubePlayer = null;
         
-        // Configuration for local video
-        const VIDEO_CONFIG = {
-            localVideoUrl: './video/tutorial.mkv', // MKV video file
-            fallbackVideoUrl: './video/tutorial.mp4', // MP4 fallback
-            posterImage: './img/video-poster.png',
-            title: 'Hướng dẫn cài đặt ROM VieOS'
+        // YouTube Configuration
+        const YOUTUBE_CONFIG = {
+            videoId: '-xYg32_Pa1c', // Replace with your actual YouTube video ID
+            title: 'Hướng dẫn cài đặt ROM VieOS',
+            channelName: 'VieOS Official',
+            defaultParams: 'enablejsapi=1&rel=0&modestbranding=1&showinfo=0&iv_load_policy=3&cc_load_policy=0'
         };
         
         // Database Management
@@ -537,13 +561,13 @@
                 donateDatabase = {
                     "version": "3.0.2",
                     "lastUpdated": "2025-08-03",
-                    "videoConfig": {
-                        "localVideoUrl": "./video/tutorial.mkv",
+                    "youtubeConfig": {
+                        "videoId": "-xYg32_Pa1c", // Replace with your actual video ID
                         "title": "Hướng dẫn cài đặt ROM VieOS",
+                        "channelName": "VieOS Official",
                         "duration": "5:30",
                         "quality": "1080p",
-                        "fallbackUrl": "./video/tutorial.mp4",
-                        "posterImage": "./img/video-poster.png"
+                        "customThumbnail": "./img/youtube-thumbnail.jpg"
                     },  
                     "appInfo": {
                         "name": "VieOS - OnePlus Flash Tool",
@@ -578,19 +602,26 @@
                 
                 console.log('Database loaded successfully:', donateDatabase.version);
                 updatePageWithDatabaseInfo();
+                initializeYouTubePlayer();
                 
             } catch (error) {
                 console.log('Error loading database, using fallback:', error);
                 donateDatabase = getDefaultDatabase();
                 updatePageWithDatabaseInfo();
+                initializeYouTubePlayer();
             }
         }
         
         // Default database as fallback
         function getDefaultDatabase() {
             return {
-                version: "1.1.0",
+                version: "3.0.2",
                 lastUpdated: "2025-08-03",
+                youtubeConfig: {
+                    videoId: "dQw4w9WgXcQ",
+                    title: "Hướng dẫn cài đặt ROM VieOS",
+                    duration: "5:30"
+                },
                 appInfo: {
                     downloadUrl: "https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw",
                     fileSize: "180 MB"
@@ -606,7 +637,7 @@
                 ],
                 stats: {
                     totalDownloads: 12485,
-                    currentVersion: "1.1.0",
+                    currentVersion: "3.0.2",
                     supportedDevices: 15,
                     lastUpdate: "2025-08-03"
                 }
@@ -618,7 +649,6 @@
             // Update version numbers throughout the page
             const versionElements = document.querySelectorAll('[data-version]');
             versionElements.forEach(el => {
-                // Priority order: stats.currentVersion > version
                 const currentVersion = donateDatabase.stats?.currentVersion || donateDatabase.version || "3.0.2";
                 console.log('Updating version to:', currentVersion);
                 el.textContent = el.textContent.replace(/v[\d.]+/, `v${currentVersion}`);
@@ -637,11 +667,15 @@
                 });
             }
             
-            // Update stats if displayed
-            if (donateDatabase.stats) {
-                console.log(`Stats: ${donateDatabase.stats.totalDownloads} downloads, ${donateDatabase.stats.supportedDevices} devices supported`);
-                console.log(`Current version from stats: ${donateDatabase.stats.currentVersion}`);
+            // Update video duration from database
+            if (donateDatabase.youtubeConfig?.duration) {
+                const durationElement = document.getElementById('videoDuration');
+                if (durationElement) {
+                    durationElement.textContent = donateDatabase.youtubeConfig.duration;
+                }
             }
+            
+            console.log('Page updated with database info');
         }
         
         // Update download URLs from database
@@ -655,121 +689,147 @@
                 const heroDownloadBtn = document.getElementById('heroDownloadBtn');
                 if (heroDownloadBtn) {
                     heroDownloadBtn.href = downloadUrl;
-                    console.log('Hero download button updated');
                 }
                 
-                // Update main download button (inside the div)
+                // Update main download button
                 const mainDownloadBtn = document.querySelector('#mainDownloadBtn a');
                 if (mainDownloadBtn) {
                     mainDownloadBtn.href = downloadUrl;
-                    console.log('Main download button updated');
                 }
-                
-            } else {
-                console.warn('No download URL found in database');
-                // Set fallback URL
-                const fallbackUrl = 'https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw';
-                
-                const heroDownloadBtn = document.getElementById('heroDownloadBtn');
-                const mainDownloadBtn = document.querySelector('#mainDownloadBtn a');
-                
-                if (heroDownloadBtn) heroDownloadBtn.href = fallbackUrl;
-                if (mainDownloadBtn) mainDownloadBtn.href = fallbackUrl;
             }
         }
         
-        // Video Management Functions
-        function initializeVideoPlayer() {
-            const video = document.getElementById('tutorialVideo');
+        // YouTube Player Functions
+        function initializeYouTubePlayer() {
+            const youtubePlayer = document.getElementById('youtubePlayer');
             const videoLoading = document.getElementById('videoLoading');
             const videoError = document.getElementById('videoError');
             
-            if (!video) return;
+            if (!youtubePlayer) return;
             
-            // Set video source from database or config
-            const videoUrl = donateDatabase.videoConfig?.localVideoUrl || VIDEO_CONFIG.localVideoUrl;
-            const fallbackUrl = donateDatabase.videoConfig?.fallbackUrl || VIDEO_CONFIG.fallbackVideoUrl;
-            const posterUrl = donateDatabase.videoConfig?.posterImage || VIDEO_CONFIG.posterImage;
+            // Get video ID from database or use default
+            const videoId = donateDatabase.youtubeConfig?.videoId || YOUTUBE_CONFIG.videoId;
+            const customParams = YOUTUBE_CONFIG.defaultParams;
             
-            // Update video sources
-            const sources = video.querySelectorAll('source');
-            if (sources.length > 0) {
-                sources[0].src = videoUrl; // MKV source
-                if (sources[1]) sources[1].src = fallbackUrl; // MP4 fallback
-            }
+            // Update YouTube iframe src with new video ID
+            const youtubeUrl = `https://www.youtube.com/embed/${videoId}?${customParams}`;
+            youtubePlayer.src = youtubeUrl;
             
-            // Update poster
-            if (posterUrl) {
-                video.poster = posterUrl;
-            }
+            console.log('YouTube player initialized with video ID:', videoId);
             
-            // Video event listeners
-            video.addEventListener('loadstart', function() {
-                console.log('Video loading started');
-                if (videoLoading) videoLoading.classList.remove('hidden');
+            // Handle iframe load events
+            youtubePlayer.addEventListener('load', function() {
+                console.log('YouTube iframe loaded successfully');
+                if (videoLoading) videoLoading.classList.add('hidden');
                 if (videoError) videoError.classList.add('hidden');
             });
             
-            video.addEventListener('loadedmetadata', function() {
-                console.log('Video metadata loaded');
-                if (videoLoading) videoLoading.classList.add('hidden');
+            youtubePlayer.addEventListener('error', function(e) {
+                console.error('YouTube iframe error:', e);
+                handleYouTubeError();
             });
             
-            video.addEventListener('canplay', function() {
-                console.log('Video can start playing');
-                if (videoLoading) videoLoading.classList.add('hidden');
-            });
-            
-            video.addEventListener('error', function(e) {
-                console.error('Video error:', e);
-                handleVideoError();
-            });
-            
-            video.addEventListener('stalled', function() {
-                console.warn('Video stalled');
-                if (videoLoading) videoLoading.classList.remove('hidden');
-            });
-            
-            video.addEventListener('waiting', function() {
-                console.log('Video waiting for data');
-                if (videoLoading) videoLoading.classList.remove('hidden');
-            });
-            
-            video.addEventListener('playing', function() {
-                console.log('Video started playing');
-                if (videoLoading) videoLoading.classList.add('hidden');
-            });
-            
-            // Try to preload video
-            video.load();
+            // Update page title if available
+            if (donateDatabase.youtubeConfig?.title) {
+                youtubePlayer.title = donateDatabase.youtubeConfig.title;
+            }
         }
         
-        function handleVideoError() {
+        function handleYouTubeError() {
             const videoLoading = document.getElementById('videoLoading');
             const videoError = document.getElementById('videoError');
             
-            console.error('Video failed to load, showing error state');
+            console.error('YouTube player failed to load');
             
             if (videoLoading) videoLoading.classList.add('hidden');
             if (videoError) videoError.classList.remove('hidden');
         }
         
-        // Update video source programmatically
-        function updateVideoSource(videoUrl, fallbackUrl) {
-            const video = document.getElementById('tutorialVideo');
-            if (!video) return;
+        // Retry video loading
+        function retryVideo() {
+            const videoLoading = document.getElementById('videoLoading');
+            const videoError = document.getElementById('videoError');
             
-            const sources = video.querySelectorAll('source');
-            if (sources.length > 0) {
-                sources[0].src = videoUrl || VIDEO_CONFIG.localVideoUrl;
-                if (sources[1] && fallbackUrl) {
-                    sources[1].src = fallbackUrl;
-                }
+            if (videoError) videoError.classList.add('hidden');
+            if (videoLoading) videoLoading.classList.remove('hidden');
+            
+            // Reinitialize YouTube player
+            setTimeout(() => {
+                initializeYouTubePlayer();
+            }, 1000);
+        }
+        
+        // Update YouTube video programmatically
+        function updateYouTubeVideo(videoId, title) {
+            const youtubePlayer = document.getElementById('youtubePlayer');
+            if (!youtubePlayer) return;
+            
+            const customParams = YOUTUBE_CONFIG.defaultParams;
+            const youtubeUrl = `https://www.youtube.com/embed/${videoId}?${customParams}`;
+            
+            youtubePlayer.src = youtubeUrl;
+            if (title) youtubePlayer.title = title;
+            
+            console.log('YouTube video updated:', videoId);
+        }
+        
+        // Open YouTube in fullscreen/new tab
+        function openYouTubeFullscreen() {
+            const videoId = donateDatabase.youtubeConfig?.videoId || YOUTUBE_CONFIG.videoId;
+            const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+            
+            window.open(youtubeUrl, '_blank', 'noopener,noreferrer');
+            
+            // Track video click (you can add analytics here)
+            console.log('YouTube video opened in new tab:', videoId);
+        }
+        
+        // Share video function
+        function shareVideo() {
+            const videoId = donateDatabase.youtubeConfig?.videoId || YOUTUBE_CONFIG.videoId;
+            const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
+            const title = donateDatabase.youtubeConfig?.title || YOUTUBE_CONFIG.title;
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: 'Xem video hướng dẫn cài đặt ROM VieOS',
+                    url: youtubeUrl
+                }).then(() => {
+                    console.log('Video shared successfully');
+                }).catch((error) => {
+                    console.log('Error sharing video:', error);
+                    fallbackShare(youtubeUrl, title);
+                });
+            } else {
+                fallbackShare(youtubeUrl, title);
             }
+        }
+        
+        function fallbackShare(url, title) {
+            // Copy to clipboard as fallback
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(() => {
+                    showShareSuccess();
+                }).catch(() => {
+                    // Fallback to manual copy
+                    prompt('Sao chép link này để chia sẻ:', url);
+                });
+            } else {
+                prompt('Sao chép link này để chia sẻ:', url);
+            }
+        }
+        
+        function showShareSuccess() {
+            // Create temporary notification
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 animate-fade-in';
+            notification.textContent = '✅ Đã sao chép link video!';
+            document.body.appendChild(notification);
             
-            // Reload video with new sources
-            video.load();
-            console.log('Video source updated:', videoUrl);
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
         }
         
         // Donate Modal Functions
@@ -869,8 +929,6 @@
         
         function navigateToSection(sectionId) {
             console.log('Navigate to section:', sectionId);
-            // You can implement navigation logic here
-            // For example, scroll to section or redirect to different page
             const element = document.getElementById(sectionId);
             if (element) {
                 element.scrollIntoView({ behavior: 'smooth' });
@@ -962,11 +1020,10 @@
         
         // Main Initialization
         document.addEventListener('DOMContentLoaded', function() {
-            console.log('VieOS Flash Tool Website Loaded');
+            console.log('VieOS Flash Tool Website with YouTube Integration Loaded');
             
             // Initialize all components
             loadDatabase();
-            initializeVideoPlayer();
             initializeAnimations();
             initializeSmoothScrolling();
             initializeButtonStates();
@@ -990,11 +1047,6 @@
         // Handle window resize for responsive design
         window.addEventListener('resize', function() {
             console.log('Window resized:', window.innerWidth);
-            
-            // Reinitialize video player on orientation change
-            if (window.innerWidth !== window.innerHeight) {
-                setTimeout(initializeVideoPlayer, 500);
-            }
         });
         
         // Export functions for global access
@@ -1002,7 +1054,10 @@
             showDonateModal,
             closeDonateModal,
             copyDonateInfo,
-            updateVideoSource,
+            updateYouTubeVideo,
+            openYouTubeFullscreen,
+            shareVideo,
+            retryVideo,
             loadDatabase,
             toggleMobileMenu,
             navigateToSection
