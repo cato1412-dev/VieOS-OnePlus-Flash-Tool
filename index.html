@@ -18,7 +18,77 @@
             }
         }
     </script>
-    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        /* Custom CSS Styles */
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(229, 62, 62, 0.1) 0%, rgba(26, 26, 26, 0.8) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(229, 62, 62, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow:hover {
+            box-shadow: 0 0 30px rgba(229, 62, 62, 0.5);
+            transform: translateY(-2px);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-backdrop {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Loading animation */
+        .loading-spinner {
+            border: 3px solid rgba(229, 62, 62, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid #e53e3e;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -47,6 +117,11 @@
                 <a href="#roms" class="hover:text-primary transition-colors">ROM</a>
                 <a href="#tools" class="hover:text-primary transition-colors">Tools</a>
             </nav>
+            <button onclick="toggleMobileMenu()" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
     </header>
 
@@ -61,9 +136,13 @@
                 Công cụ flash Rom VieOS cho thiết bị OnePlus. Hỗ trợ đầy đủ các chế độ flash, recovery và bootloader.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+<<<<<<< HEAD
+                <a href="#" target="_blank" rel="noopener noreferrer" id="heroDownloadBtn">
+=======
                 <a href="https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw" target="_blank" rel="noopener noreferrer">
+>>>>>>> a5eb0bf43a43713dc39edd38af57e5170882742a
                     <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg" data-version>
-                        📥 Tải xuống v1.1.0
+                        🔥 Tải xuống v3.0.2
                     </button>
                 </a>
                 <button onclick="showDonateModal()" class="glass-effect text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all">
@@ -170,7 +249,7 @@
                 <!-- Tutorial Info -->
                 <div class="space-y-8">
                     <div class="glass-effect p-6 rounded-2xl">
-                        <h4 class="text-2xl font-bold mb-4 text-primary">📹 Video hướng dẫn</h4>
+                        <h4 class="text-2xl font-bold mb-4 text-primary">🎹 Video hướng dẫn</h4>
                         <p class="text-gray-300 mb-6">
                             Xem video hướng dẫn từng bước để cài đặt ROM VieOS trên thiết bị OnePlus của bạn một cách an toàn và hiệu quả bằng VieOS Flash Tool.
                         </p>
@@ -212,7 +291,6 @@
                             <div class="text-sm text-gray-400">Chất lượng</div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -289,15 +367,25 @@
             </h3>
             <div class="max-w-md mx-auto glass-effect p-8 rounded-2xl">
                 <div class="w-16 h-16 bg-primary rounded-xl flex items-center justify-center mx-auto mb-6 floating">
-                    <span class="text-2xl">📥</span>
+                    <span class="text-2xl">🔥</span>
                 </div>
-                <h4 class="text-2xl font-semibold mb-4" data-version>VieOS Flash Tool v1.1.0</h4>
+                <h4 class="text-2xl font-semibold mb-4" data-version>VieOS Flash Tool v3.0.2</h4>
                 <p class="text-gray-400 mb-6">Phiên bản mới nhất với nhiều cải tiến và tính năng mới</p>
+<<<<<<< HEAD
+                <div id="mainDownloadBtn">
+                    <a href="#" target="_blank" rel="noopener noreferrer">
+                        <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg w-full mb-4">
+                            🔥 Tải xuống (180 MB)
+                        </button>
+                    </a>
+                </div>
+=======
                 <a href="https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw" target="_blank" rel="noopener noreferrer">
                     <button class="btn-glow bg-primary hover:bg-accent text-white px-8 py-4 rounded-xl font-semibold text-lg w-full mb-4">
                         📥 Tải xuống (180 MB)
                     </button>
                 </a>
+>>>>>>> a5eb0bf43a43713dc39edd38af57e5170882742a
                 <p class="text-sm text-gray-500">Hỗ trợ Windows 10/11 (64-bit)</p>
             </div>
         </div>
@@ -312,9 +400,7 @@
             <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                 <div class="card-hover glass-effect p-8 rounded-2xl text-center cursor-pointer" onclick="window.open('https://t.me/VieOS_discussions', '_blank')">
                     <div class="w-16 h-16 bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">
-                            <img src="https://img.icons8.com/?size=100&id=63306&format=png&color=000000" alt="" srcset="">
-                        </span>
+                        <span class="text-3xl">📞</span>
                     </div>
                     <h4 class="text-xl font-semibold mb-4">Telegram Group</h4>
                     <p class="text-gray-400 mb-6">Tham gia cộng đồng Telegram để được hỗ trợ nhanh chóng</p>
@@ -325,9 +411,7 @@
                 
                 <div class="card-hover glass-effect p-8 rounded-2xl text-center cursor-pointer" onclick="window.open('https://www.facebook.com/groups/vieos.community', '_blank')">
                     <div class="w-16 h-16 bg-blue-600/20 rounded-xl flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">
-                            <img src="https://img.icons8.com/?size=100&id=118497&format=png&color=000000" alt="" srcset="">
-                        </span>
+                        <span class="text-3xl">📘</span>
                     </div>
                     <h4 class="text-xl font-semibold mb-4">Facebook Group</h4>
                     <p class="text-gray-400 mb-6">Kết nối với cộng đồng người dùng OnePlus Việt Nam</p>
@@ -421,8 +505,480 @@
         </div>
     </div>
 
-    <!-- JavaScript -->
-    <script src="./js/main.js"></script>
+    <!-- Integrated JavaScript -->
+    <script>
+        // VieOS Flash Tool - Main JavaScript
+        
+        // Global Variables
+        let donateDatabase = {};
+        let currentDonateIndex = 0;
+        
+        // Configuration for Google Drive Video
+        const VIDEO_CONFIG = {
+            driveFileId: '1LMHmOuJ9DLPDxP7xVTvryy3UBIHHVMTz',
+            fallbackVideoUrl: './video/video.mp4',
+            posterImage: './img/video-poster.png'
+        };
+        
+        // Database Management
+        async function loadDatabase() {
+            try {
+                // Create database from the JSON data provided
+                donateDatabase = {
+                    "version": "3.0.2",
+                    "lastUpdated": "2025-08-03",
+                    "videoConfig": {
+                        "googleDriveId": "1LMHmOuJ9DLPDxP7xVTvryy3UBIHHVMTz",
+                        "title": "Hướng dẫn cài đặt ROM VieOS",
+                        "duration": "5:30",
+                        "quality": "1080p",
+                        "fallbackUrl": "./video/video.mp4",
+                        "posterImage": "./img/video-poster.png"
+                    },  
+                    "appInfo": {
+                        "name": "VieOS - OnePlus Flash Tool",
+                        "developer": "JerryX0x",
+                        "description": "Công cụ flash chuyên nghiệp cho thiết bị OnePlus",
+                        "fileSize": "180 MB",
+                        "requirements": "Windows 10/11 (64-bit)",
+                        "downloadUrl": "https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw"
+                    },
+                    "donateOptions": [
+                        {
+                            "id": 1,
+                            "title": "MoMo",
+                            "type": "ewallet",
+                            "info": "Cảm ơn mọi người đã hỗ trợ",
+                            "image": "./img/moc.png",
+                            "active": true,
+                            "currency": "VND",
+                            "minAmount": 0
+                        }
+                    ],
+                    "stats": {
+                        "totalDownloads": 12485,
+                        "currentVersion": "3.0.2",
+                        "supportedDevices": 15,
+                        "lastUpdate": "2025-08-03",
+                        "monthlyDownloads": 2847,
+                        "userRating": 4.8,
+                        "totalUsers": 8965
+                    }
+                };
+                
+                console.log('Database loaded successfully:', donateDatabase.version);
+                updatePageWithDatabaseInfo();
+                
+            } catch (error) {
+                console.log('Error loading database, using fallback:', error);
+                donateDatabase = getDefaultDatabase();
+                updatePageWithDatabaseInfo();
+            }
+        }
+        
+        // Default database as fallback
+        function getDefaultDatabase() {
+            return {
+                version: "1.1.0",
+                lastUpdated: "2025-08-03",
+                appInfo: {
+                    downloadUrl: "https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw",
+                    fileSize: "180 MB"
+                },
+                donateOptions: [
+                    {
+                        id: 1,
+                        title: "MoMo",
+                        type: "ewallet",
+                        info: "Cảm ơn mọi người đã hỗ trợ",
+                        image: "./img/moc.png"
+                    }
+                ],
+                stats: {
+                    totalDownloads: 12485,
+                    currentVersion: "1.1.0",
+                    supportedDevices: 15,
+                    lastUpdate: "2025-08-03"
+                }
+            };
+        }
+        
+        // Update page elements with database info
+        function updatePageWithDatabaseInfo() {
+            // Update version numbers throughout the page
+            const versionElements = document.querySelectorAll('[data-version]');
+            versionElements.forEach(el => {
+                // Priority order: stats.currentVersion > version
+                const currentVersion = donateDatabase.stats?.currentVersion || donateDatabase.version || "3.0.2";
+                console.log('Updating version to:', currentVersion);
+                el.textContent = el.textContent.replace(/v[\d.]+/, `v${currentVersion}`);
+            });
+            
+            // Update download URLs
+            updateDownloadUrls();
+            
+            // Update file size if available
+            if (donateDatabase.appInfo?.fileSize) {
+                const downloadBtns = document.querySelectorAll('button');
+                downloadBtns.forEach(btn => {
+                    if (btn.textContent.includes('MB')) {
+                        btn.textContent = btn.textContent.replace(/\(\d+\s*MB\)/, `(${donateDatabase.appInfo.fileSize})`);
+                    }
+                });
+            }
+            
+            // Update stats if displayed
+            if (donateDatabase.stats) {
+                console.log(`Stats: ${donateDatabase.stats.totalDownloads} downloads, ${donateDatabase.stats.supportedDevices} devices supported`);
+                console.log(`Current version from stats: ${donateDatabase.stats.currentVersion}`);
+            }
+        }
+        
+        // Update download URLs from database
+        function updateDownloadUrls() {
+            const downloadUrl = donateDatabase.appInfo?.downloadUrl;
+            
+            if (downloadUrl) {
+                console.log('Updating download URLs with:', downloadUrl);
+                
+                // Update hero section download button
+                const heroDownloadBtn = document.getElementById('heroDownloadBtn');
+                if (heroDownloadBtn) {
+                    heroDownloadBtn.href = downloadUrl;
+                    console.log('Hero download button updated');
+                }
+                
+                // Update main download button (inside the div)
+                const mainDownloadBtn = document.querySelector('#mainDownloadBtn a');
+                if (mainDownloadBtn) {
+                    mainDownloadBtn.href = downloadUrl;
+                    console.log('Main download button updated');
+                }
+                
+            } else {
+                console.warn('No download URL found in database');
+                // Set fallback URL
+                const fallbackUrl = 'https://kentdao-my.sharepoint.com/:u:/g/personal/vieosteam_canhdn_site/EdwTJniQE6ZFpBgV_xuga5gBpGNrbA_pc8MwpwXWohdyGw?e=eq9SUw';
+                
+                const heroDownloadBtn = document.getElementById('heroDownloadBtn');
+                const mainDownloadBtn = document.querySelector('#mainDownloadBtn a');
+                
+                if (heroDownloadBtn) heroDownloadBtn.href = fallbackUrl;
+                if (mainDownloadBtn) mainDownloadBtn.href = fallbackUrl;
+            }
+        }
+        
+        // Video Management Functions
+        function initializeVideoPlayer() {
+            const videoContainer = document.getElementById('videoContainer');
+            const videoFallback = document.getElementById('videoFallback');
+            const iframe = document.getElementById('tutorialVideo');
+            
+            if (!iframe) return;
+            
+            // Show loading state
+            if (videoFallback) {
+                videoFallback.classList.remove('hidden');
+            }
+            
+            // Get video ID from database if available
+            const videoId = donateDatabase.videoConfig?.googleDriveId || VIDEO_CONFIG.driveFileId;
+            const driveUrl = `https://drive.google.com/file/d/${videoId}/preview`;
+            
+            // Only update the source if it's different
+            if (iframe.src !== driveUrl) {
+                iframe.src = driveUrl;
+                
+                // Hide loading after a delay
+                setTimeout(() => {
+                    if (videoFallback) {
+                        videoFallback.classList.add('hidden');
+                    }
+                }, 2000);
+                
+                iframe.addEventListener('load', () => {
+                    if (videoFallback) {
+                        videoFallback.classList.add('hidden');
+                    }
+                });
+                
+                iframe.addEventListener('error', () => {
+                    handleVideoError();
+                });
+            }
+        }
+        
+        function handleVideoError() {
+            const videoContainer = document.getElementById('videoContainer');
+            const videoFallback = document.getElementById('videoFallback');
+            
+            // Create fallback video element
+            if (videoContainer) {
+                videoContainer.innerHTML = `
+                    <video 
+                        class="w-full h-full object-cover" 
+                        controls 
+                        poster="${VIDEO_CONFIG.posterImage}"
+                    >
+                        <source src="${VIDEO_CONFIG.fallbackVideoUrl}" type="video/mp4">
+                        <p class="text-white p-4">Trình duyệt của bạn không hỗ trợ video HTML5.</p>
+                    </video>
+                `;
+            }
+            
+            if (videoFallback) {
+                videoFallback.classList.add('hidden');
+            }
+        }
+        
+        // Donate Modal Functions
+        function showDonateModal() {
+            const modal = document.getElementById('donateModal');
+            const donateImage = document.getElementById('donateImage');
+            const donateTitle = document.getElementById('donateTitle');
+            const donateInfo = document.getElementById('donateInfo');
+            
+            if (!donateDatabase.donateOptions || donateDatabase.donateOptions.length === 0) {
+                console.warn('No donate options available');
+                return;
+            }
+            
+            const currentOption = donateDatabase.donateOptions[currentDonateIndex];
+            
+            if (donateImage && currentOption.image) {
+                donateImage.src = currentOption.image;
+                donateImage.classList.remove('hidden');
+            }
+            if (donateTitle) donateTitle.textContent = currentOption.title;
+            if (donateInfo) donateInfo.textContent = currentOption.info;
+            
+            if (modal) {
+                modal.classList.remove('hidden');
+                modal.classList.add('animate-fade-in');
+                
+                // Add click outside to close
+                modal.addEventListener('click', function(e) {
+                    if (e.target === modal) {
+                        closeDonateModal();
+                    }
+                });
+            }
+        }
+        
+        function closeDonateModal() {
+            const modal = document.getElementById('donateModal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+        
+        function copyDonateInfo() {
+            if (!donateDatabase.donateOptions || donateDatabase.donateOptions.length === 0) {
+                return;
+            }
+            
+            const currentOption = donateDatabase.donateOptions[currentDonateIndex];
+            const textToCopy = currentOption.info;
+            
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    showCopySuccess();
+                }).catch(err => {
+                    console.error('Failed to copy text: ', err);
+                    fallbackCopy(textToCopy);
+                });
+            } else {
+                fallbackCopy(textToCopy);
+            }
+        }
+        
+        function showCopySuccess() {
+            const button = event.target;
+            const originalText = button.textContent;
+            button.textContent = '✅ Đã sao chép!';
+            button.classList.add('bg-green-500');
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.classList.remove('bg-green-500');
+            }, 2000);
+        }
+        
+        function fallbackCopy(text) {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            document.body.appendChild(textArea);
+            textArea.select();
+            try {
+                document.execCommand('copy');
+                showCopySuccess();
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+            document.body.removeChild(textArea);
+        }
+        
+        // Navigation Functions
+        function toggleMobileMenu() {
+            const nav = document.querySelector('nav');
+            if (nav) {
+                nav.classList.toggle('hidden');
+            }
+        }
+        
+        function navigateToSection(sectionId) {
+            console.log('Navigate to section:', sectionId);
+            // You can implement navigation logic here
+            // For example, scroll to section or redirect to different page
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        function initializeSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Intersection Observer for animations
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'floating 3s ease-in-out infinite';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animations
+            document.querySelectorAll('.card-hover').forEach(card => {
+                observer.observe(card);
+            });
+        }
+        
+        // Button loading states
+        function initializeButtonStates() {
+            document.querySelectorAll('button').forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!this.classList.contains('no-loading') && !this.hasAttribute('onclick')) {
+                        const originalText = this.textContent;
+                        this.textContent = 'Đang tải...';
+                        this.disabled = true;
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.disabled = false;
+                        }, 1000);
+                    }
+                });
+            });
+        }
+        
+        // Keyboard support
+        function initializeKeyboardSupport() {
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeDonateModal();
+                }
+            });
+        }
+        
+        // Performance monitoring
+        function initializePerformanceMonitoring() {
+            window.addEventListener('load', function() {
+                const loadTime = performance.now();
+                console.log(`Page loaded in ${loadTime.toFixed(2)}ms`);
+            });
+        }
+        
+        // Error handling
+        function initializeErrorHandling() {
+            window.addEventListener('error', function(e) {
+                console.error('Global error:', e.error);
+            });
+            
+            window.addEventListener('unhandledrejection', function(e) {
+                console.error('Unhandled promise rejection:', e.reason);
+            });
+        }
+        
+        // Main Initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('VieOS Flash Tool Website Loaded');
+            
+            // Initialize all components
+            loadDatabase();
+            initializeVideoPlayer();
+            initializeAnimations();
+            initializeSmoothScrolling();
+            initializeButtonStates();
+            initializeKeyboardSupport();
+            initializePerformanceMonitoring();
+            initializeErrorHandling();
+            
+            // Add dynamic hero interaction
+            const hero = document.querySelector('section');
+            if (hero) {
+                hero.addEventListener('mouseenter', function() {
+                    this.style.background = 'linear-gradient(135deg, rgba(229, 62, 62, 0.1) 0%, transparent 50%)';
+                });
+                
+                hero.addEventListener('mouseleave', function() {
+                    this.style.background = '';
+                });
+            }
+        });
+        
+        // Handle window resize for responsive design
+        window.addEventListener('resize', function() {
+            console.log('Window resized:', window.innerWidth);
+            
+            // Reinitialize video player on orientation change
+            if (window.innerWidth !== window.innerHeight) {
+                setTimeout(initializeVideoPlayer, 500);
+            }
+        });
+        
+        // Export functions for global access
+        window.VieOSApp = {
+            showDonateModal,
+            closeDonateModal,
+            copyDonateInfo,
+            updateVideoSource: function(driveFileId) {
+                VIDEO_CONFIG.driveFileId = driveFileId;
+                initializeVideoPlayer();
+            },
+            loadDatabase,
+            toggleMobileMenu,
+            navigateToSection
+        };
+        
+        // Auto-cycle donate options every 10 seconds when modal is open
+        setInterval(() => {
+            const modal = document.getElementById('donateModal');
+            if (modal && !modal.classList.contains('hidden') && donateDatabase.donateOptions && donateDatabase.donateOptions.length > 1) {
+                currentDonateIndex = (currentDonateIndex + 1) % donateDatabase.donateOptions.length;
+                showDonateModal();
+            }
+        }, 10000);
+    </script>
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
